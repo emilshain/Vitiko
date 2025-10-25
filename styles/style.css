@@ -209,6 +209,15 @@ header{
     header{
         padding: 20px;
     }
+    .profile span {
+        display: none;
+    }
+    .profile .dropdown-menu {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+    }
     #menu-icon{
         display: block;
         color: var(--color-text-primary);
