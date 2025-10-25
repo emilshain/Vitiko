@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Fruits and Vegetables Website</title>
+    <link rel="stylesheet" href="styles/landing.css">
+    <!--Fontawesome Icons-->
+    <script src="https://kit.fontawesome.com/b3ea2fd00b.js" crossorigin="anonymous"></script>
+    <!--Google Fonts - Poppins-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <a href="#" class="logo"><img src="images/vitiko_wordmark.svg"></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        <!--Nav List-->
+        <ul class="navbar">
+        <li><a href="#home" class="home-active">Home</a></li>
+        <li>
+            <a href="#catagories">Catagories</a>
+            <ul class="dropdown-menu" id="categoryDropdown">
+                <li><a href="#Local Mapping--">Local Mapping</a></li>
+                <li><a href="#Customer Review--">Customer Review</a></li>
+                <li><a href="#Upload Photo--">Upload Photo</a></li>
+            </ul>
+        </li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="customer.html">Customers</a></li>
+        </ul>
+        <!--Profile-->
+        <div class="profile">
+        <img src="images/pfp.png" alt="Profile Picture">
+        <span>Emil Shain</span>
+        <ul class="dropdown-menu" id="profileDropdown" style="display: none;" text-align="right">
+            <li><a href="#profile--">Profile</a></li>
+            <li><a href="#settings--">Settings</a></li>
+            <li><a href="login.html">Logout</a></li>
+
+        </ul>
+        <i class="fa-solid fa-caret-down"></i>
+    </div>
+    </header>
+    <!--Home-->
+    <section class="landing" id="landing">
+        <div class="landing-content">
+            <h1>Everything You Need,<br>Just Around the Corner</h1>
+            <a href="signup.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+    <script src="script.js" ></script>
+</body>
+</html>
