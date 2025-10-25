@@ -19,15 +19,28 @@
         <!--Nav List-->
         <ul class="navbar">
         <li><a href="#home" class="home-active">Home</a></li>
-        <li><a href="#catagories">Catagories</a></li>
+        <li>
+            <a href="#catagories">Catagories</a>
+            <ul class="dropdown-menu" id="categoryDropdown">
+                <li><a href="#fruits--">Fruits</a></li>
+                <li><a href="#vegetables--">Vegetables</a></li>
+                <li><a href="#nuts--">Nuts</a></li>
+            </ul>
+        </li>
         <li><a href="#products">Products</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#customers">Customers</a></li>
         </ul>
         <!--Profile-->
         <div class="profile">
-        <img src="images/" alt="">
+        <img src="" alt="">
         <span>Emil Shain</span>
+        <ul class="dropdown-menu" id="profileDropdown" style="display: none;" text-align="right">
+            <li><a href="#profile--">Profile</a></li>
+            <li><a href="#settings--">Settings</a></li>
+            <li><a href="#logout--">Logout</a></li>
+
+        </ul>
         <i class="fa-solid fa-caret-down"></i>
     </div>
     </header>
