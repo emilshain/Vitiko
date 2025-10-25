@@ -128,7 +128,10 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem 2rem; /* Increased top padding to account for navbar */
+    gap: 2rem;
     background: var(--color-bg-primary);
 }
 .home .card{
@@ -164,4 +167,55 @@ header{
     background: var(--color-bg-primary);
     color: var(--color-accent-primary);
     border: 1px solid var(--color-accent-primary);
+}
+@media (max-width: 980px) {
+    header{
+        padding: 20px;
+    }
+    #menu-icon{
+        display: block;
+        color: var(--color-text-primary);
+    }
+    #menu-icon.bx-x {
+        transform: rotate(180deg);
+        transition: 0.3s;
+    }
+    .navbar{
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: var(--color-bg-secondary);
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1.5rem;
+        padding: 2rem;
+        transition: 0.5s;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar.active{
+        right: 0;
+    }
+    .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    /* Hide dropdowns in mobile view initially */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 0.5rem;
+        box-shadow: none;
+        display: none;
+    }
+    .navbar li:hover .dropdown-menu {
+        display: block;
+    }
+}
+@media (max-width: 600px) {
+    .home .card{
+        width: 100%;
+    }
 }

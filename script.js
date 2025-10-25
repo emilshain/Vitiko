@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu functionality
+    const menu = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    // Toggle menu when clicking hamburger icon
+    menu.onclick = (e) => {
+        e.stopPropagation(); // Prevent event from bubbling to document
+        menu.classList.toggle('bx-x');
+        navbar.classList.toggle('active');
+    };
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !navbar.contains(e.target)) {
+            menu.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        }
+    });
+
+    // Close menu when clicking on a nav link
+    navbar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        });
+    });
+
+    // Existing dropdown functionality
     const categoryLink = document.querySelector('.navbar li a[href="#catagories"]');
     const dropdown = document.getElementById('categoryDropdown');
 
