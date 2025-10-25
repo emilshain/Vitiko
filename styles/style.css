@@ -26,6 +26,9 @@ body{
     color: var(--color-text-primary);
     background: var(--color-bg-primary);
 }
+/* =============== Navigation Styles =============== */
+
+/* Header */
 header{
     position: fixed;
     width:100%;
@@ -40,6 +43,82 @@ header{
     padding: 20px 100px;
     transition:0.5s;
 }
+
+/* Logo */
+.logo{
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-accent-primary);
+    column-gap: 0.2rem;
+}
+.logo img{
+    width: 100px;
+}
+
+/* Main Navigation */
+.navbar{
+    display: flex;
+    column-gap: 0.5rem;
+}
+.navbar a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+}
+.navbar a:hover, 
+.navbar .home-active {
+    background: var(--color-accent-primary);
+    border-radius: 5rem;
+    color: var(--color-bg-primary);
+    transition: 0.3s;
+} 
+
+/* Mobile Menu Icon */
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+    color: var(--color-text-primary);
+}
+#menu-icon.bx-x {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+/* Dropdown Menu Styles */
+.navbar li {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-bg-secondary);
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: none;
+    padding: 8px 0;
+}
+.dropdown-menu li {
+    padding: 0;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: var(--color-text-primary);
+    transition: 0.3s;
+}
+.dropdown-menu a:hover {
+    background: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+    border-radius: 0;
+}
+
+/* Profile Section */
 .profile{
     display: flex;
     align-items: center;
@@ -47,6 +126,10 @@ header{
     cursor: pointer;
     position: relative;
     padding: 0.5rem;
+}
+.profile:hover {
+    background: var(--color-bg-primary);
+    border-radius: 8px;
 }
 .profile img{
     width: 40px;
@@ -60,10 +143,15 @@ header{
     font-weight: 500;
     color: var(--color-text-primary);
 }
-.profile:hover {
-    background: var(--color-bg-primary);
-    border-radius: 8px;
+.profile i {
+    color: var(--color-text-primary);
+    transition: transform 0.3s;
 }
+.profile.active i {
+    transform: rotate(180deg);
+}
+
+/* Profile Dropdown */
 .profile .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -87,87 +175,13 @@ header{
     background: var(--color-accent-primary);
     color: var(--color-bg-primary);
 }
-.profile i {
-    color: var(--color-text-primary);
-    transition: transform 0.3s;
-}
-.profile.active i {
-    transform: rotate(180deg);
-}
-.logo{
-    align-items: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-accent-primary);
-    column-gap: 0.2rem;
-}
-.logo img{
-    width: 100px;
-}
-.navbar{
-    display: flex;
-    column-gap: 0.5rem;
-}
-.navbar a{
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-}
-.navbar a:hover, 
-.navbar .home-active {
-    background: var(--color-accent-primary);
-    border-radius: 5rem;
-    color: var(--color-bg-primary);
-    transition: 0.3s;
-} 
-#menu-icon{
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10001;
-    display: none;
-}
-
-/* Dropdown styles */
-.navbar li {
-    position: relative;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: var(--color-bg-secondary);
-    min-width: 160px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    display: none;
-    padding: 8px 0;
-}
-
-.dropdown-menu li {
-    padding: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 8px 16px;
-    color: var(--color-text-primary);
-    transition: 0.3s;
-}
-
-.dropdown-menu a:hover {
-    background: var(--color-accent-primary);
-    color: var(--color-bg-primary);
-    border-radius: 0;
-}
 .home{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     min-height: 100vh;
-    padding: 6rem 2rem 2rem 2rem; /* Increased top padding to account for navbar */
+    padding: 6rem 2rem 2rem 2rem; 
     gap: 2rem;
     background: var(--color-bg-primary);
 }
@@ -206,26 +220,15 @@ header{
     border: 1px solid var(--color-accent-primary);
 }
 @media (max-width: 980px) {
+    /* Header */
     header{
         padding: 20px;
     }
-    .profile span {
-        display: none;
-    }
-    .profile .dropdown-menu {
-        position: fixed;
-        top: 70px;
-        right: 20px;
-        width: 200px;
-    }
+
     #menu-icon{
         display: block;
-        color: var(--color-text-primary);
     }
-    #menu-icon.bx-x {
-        transform: rotate(180deg);
-        transition: 0.3s;
-    }
+
     .navbar{
         position: fixed;
         top: 70px;
@@ -248,7 +251,8 @@ header{
         width: 100%;
         text-align: center;
     }
-    /* Hide dropdowns in mobile view initially */
+
+    /* Mobile Dropdowns */
     .dropdown-menu {
         position: static;
         width: 100%;
@@ -258,6 +262,17 @@ header{
     }
     .navbar li:hover .dropdown-menu {
         display: block;
+    }
+
+    /* Mobile Profile */
+    .profile span {
+        display: none;
+    }
+    .profile .dropdown-menu {
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        width: 200px;
     }
 }
 @media (max-width: 600px) {
