@@ -47,23 +47,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const profileDropdown = document.getElementById('profileDropdown');
 
             // Toggle dropdown on click
-            profile.addEventListener('click', () => {
-                if (profileDropdown.style.display === 'none') {
-                    profileDropdown.style.display = 'block';
-                } else {
-                    profileDropdown.style.display = 'none';
-                }
+            profile.addEventListener('click', (e) => {
+                e.stopPropagation();
+                profileDropdown.style.display = profileDropdown.style.display === 'block' ? 'none' : 'block';
+                profile.classList.toggle('active');
             });
-            // Position dropdown below profile
-            const profileRect = profile.getBoundingClientRect();
-            profileDropdown.style.position = 'absolute';
-            profileDropdown.style.top = `${profileRect.bottom}px`;
-            profileDropdown.style.left = `${profileRect.left}px`;
+
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
                 if (!profile.contains(e.target)) {
                     profileDropdown.style.display = 'none';
+                    profile.classList.remove('active');
                 }
+            });
+
+            // Close dropdown when clicking a menu item
+            profileDropdown.querySelectorAll('a').forEach(item => {
+                item.addEventListener('click', () => {
+                    profileDropdown.style.display = 'none';
+                    profile.classList.remove('active');
+                });
             });
 
             // Login and Signup functionality

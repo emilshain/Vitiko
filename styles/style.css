@@ -45,6 +45,8 @@ header{
     align-items: center;
     column-gap: 0.5rem;
     cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
 }
 .profile img{
     width: 40px;
@@ -56,6 +58,41 @@ header{
 .profile span{
     font-size: 13px;
     font-weight: 500;
+    color: var(--color-text-primary);
+}
+.profile:hover {
+    background: var(--color-bg-primary);
+    border-radius: 8px;
+}
+.profile .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0;
+    display: none;
+    z-index: 1001;
+}
+.profile .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-text-primary);
+    transition: 0.3s;
+}
+.profile .dropdown-menu li a:hover {
+    background: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+}
+.profile i {
+    color: var(--color-text-primary);
+    transition: transform 0.3s;
+}
+.profile.active i {
+    transform: rotate(180deg);
 }
 .logo{
     align-items: center;
