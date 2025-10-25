@@ -9,12 +9,12 @@
 }
 
 :root {
-    --green-color: #3cb815;
-    --light-green-color: #c0eb7b;
-    --orange-color: #ff7e00;
-    --light-orange-color: #f75f1d;
-    --text-color: #1a2428;
-    --bg-color: #ffffff;
+  --color-bg-primary: #1D1F2D; /* Main background, header, footer */
+  --color-bg-secondary: #2A2E3C; /* Cards, sidebars, modal backgrounds */
+  --color-accent-primary: #B3F200; /* Key CTA buttons, active states, icons */
+  --color-text-primary: #F0F4F8; /* Main headings, body text, labels */
+  --color-text-secondary: #8EE4AF; /* Secondary info, links, indicators */
+  --color-border-subtle: #4E576B; /* Input borders, dividers, shadows */
 }
 section{
     padding: 4.5rem 0 1.5rem;
@@ -23,7 +23,8 @@ img {
     width: 100%;
 }
 body{
-    color: var(--text-color);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
 }
 header{
     position: fixed;
@@ -34,7 +35,7 @@ header{
     display:flex;
     align-items:center;
     justify-content: space-between;
-    background: var(--bg-color);
+    background: var(--color-bg-secondary);
     box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
     padding: 20px 100px;
     transition:0.5s;
@@ -74,14 +75,14 @@ header{
 .navbar a{
     font-size: 1rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--color-text-primary);
     padding: 0.5rem 1rem;
 }
 .navbar a:hover, 
 .navbar .home-active {
-    background: var(--green-color);
+    background: var(--color-accent-primary);
     border-radius: 5rem;
-    color: var(--bg-color);
+    color: var(--color-bg-primary);
     transition: 0.3s;
 } 
 #menu-icon{
