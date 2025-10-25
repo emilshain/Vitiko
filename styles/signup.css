@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -68,4 +69,76 @@ form input{
 .card h2{
     text-align: center;
     margin-bottom: 1rem;
+=======
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style-type: none;
+    text-decoration: none;
+}
+/* Vitiko Color Palette Variables */
+:root {
+  --color-bg-primary: #1D1F2D; /* Main background, header, footer */
+  --color-bg-secondary: #2A2E3C; /* Cards, sidebars, modal backgrounds */
+  --color-accent-primary: #B3F200; /* Key CTA buttons, active states, icons */
+  --color-text-primary: #F0F4F8; /* Main headings, body text, labels */
+  --color-text-secondary: #8EE4AF; /* Secondary info, links, indicators */
+  --color-border-subtle: #4E576B; /* Input borders, dividers, shadows */
+}
+body{
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+.card{
+    width: 400px;
+    padding: 2rem;
+    box-shadow: 0 8px 11px rgb(14 55 54 / 15%);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-bg-secondary);
+}
+.card a{
+    color: var(--color-accent-primary);
+}
+.card button{
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-accent-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-bg-primary);
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.card span{
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+form label{
+    display: block;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+form input{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 5px;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+.card h2{
+    text-align: center;
+    margin-bottom: 1rem;
+>>>>>>> f031273868e347da07abc26543cd1d779bd08217
 }
