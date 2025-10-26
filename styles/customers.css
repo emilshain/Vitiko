@@ -28,30 +28,8 @@
             padding: 0 20px;
         }
         
-        /* Header Styles */
-        header {
-            background-color: var(--color-bg-secondary);
-            color: var(--color-text-primary);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-        }
+        /* Header & navigation are provided by styles/style.css to keep theme consistent */
+        /* Remove header/logo overrides so the main stylesheet controls navigation styling. */
         
         .cta-button {
             background-color: var(--color-accent-primary);
@@ -68,11 +46,11 @@
             background-color: var(--color-text-secondary);
         }
         
-        /* Hero Section */
+        /* Hero Section (add top padding so content isn't hidden behind fixed navbar) */
         .hero {
             background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-primary) 100%);
             color: rgb(14, 12, 12);
-            padding: 4rem 0;
+            padding: 6rem 0 4rem; /* top padding accounts for fixed header */
             text-align: center;
         }
         
@@ -115,7 +93,7 @@
         
         .btn-secondary {
             background-color: transparent;
-            color: rgb(0, 0, 0);
+            color: var(--color-bg-primary);
             border: 2px solid var(--color-bg-primary);
         }
         
